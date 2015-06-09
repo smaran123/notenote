@@ -1,0 +1,23 @@
+
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  database: notetnote_development
+
+
+test:
+  <<: *default
+  database: notetnote_test
+
+production:
+  <<: *default
+  database: notetnote_production
+  username: notetnote
+  password: <%= ENV['NOTETNOTE_DATABASE_PASSWORD'] %>
