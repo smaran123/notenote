@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #banner {
-	background-image: url(image_path("welcome_banner_image.jpg"));
+	background-image: url(image_path("banner.jpg"));
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top center;
@@ -44,7 +44,7 @@
 }
 
 #callouts {
-	background-image: url(image_path("callout_background.jpg"));
+	background-image: url(image_path("callout.jpg"));
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top center;

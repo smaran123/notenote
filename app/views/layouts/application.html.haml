@@ -1,16 +1,20 @@
 !!!
 %html
 %head
-	%title NoteNote
+	%title NoteNote | Online Notebook
 	= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
 	= javascript_include_tag 'application', 'data-turbolinks-track' => true
 	= csrf_meta_tags
 %body
-	- if user_signed_in?
-		= link_to "Signout", destroy_user_session_path,:method=>"delete"
-	- else
-		= link_to "SignUp", new_user_registration_path
-		= link_to "SignIn", new_user_session_path	
+	%header 
+		.header_inner
+			= link_to image_tag("logo.svg"), root_path, :id => "logo"
+			%nav
+			- if user_signed_in?
+				= link_to "NewNote", new_note_path
+				= link_to "Signout", destroy_user_session_path,:method=>"delete"
+			- else
+				= link_to "SignIn", new_user_session_path	
 
 	%p.notie
 		= notice
